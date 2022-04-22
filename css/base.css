@@ -12,6 +12,9 @@ footer h2{
     padding: 10px;
 }
 
+footer {
+    margin: 50px;
+}
 .section-buttons button {
     margin: 10px;
 }
