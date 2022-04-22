@@ -1,6 +1,15 @@
+main{
+    height: 500px;
+}
+
 main h1{
     background-color: rgb(244, 243, 216);
     padding: 30px;
+}
+
+footer h2{
+    background-color: rgb(244, 243, 216);
+    padding: 10px;
 }
 
 .section-buttons button {
