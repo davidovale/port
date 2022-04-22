@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <title>Story Writer</title>
         <link type="text/css" rel="stylesheet" href="../css/base.css">
@@ -12,17 +12,17 @@
         <main>
             <div class="content-text">
                 <h1>Story Editor</h1>
-                <label for="name_input">Story Name: </label><input id=name_input></input>
+                <label for="name_input">Story Name: </label><input id=name_input>
                 <label for="story_editor">Story:</label>
                 <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
             
-                <section class="section-buttons">
+                <div class="section-buttons">
                     <button onclick="loadStory()">Find and Edit It</button>
                     <button onclick="saveStory()">Save It</button>
                     <button onclick="displayStory()">Display It</button>
                     <button onclick="removeStory()">Remove It</button>
-                </section>
-                <section id="story_display"></section>
+                </div>
+                <div id="story_display"></div>
             </div>
         </main>
         <footer>
