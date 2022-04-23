@@ -9,24 +9,26 @@ const links = [
     }
 ]
 
+function indexMain(){
+    let div = document.querySelector(".content");
+    let ol = document.createElement("ol");
+    ol.setAttribute("class", "myList");
+    div.appendChild(ol);
+        links.forEach((stories) => {
+        let liLabel = document.createElement('li');
+        let aLiUrl = document.createElement('a');
+        aLiUrl.setAttribute("href",stories.url);
+        aLiUrl.textContent = stories.url;
+        
+        liLabel.textContent = stories.label;
+        liLabel.appendChild(aLiUrl);
+        
+        ol.appendChild(liLabel);
 
-let div = document.querySelector(".content");
-let ol = document.createElement("ol");
-ol.setAttribute("class", "myList");
-div.appendChild(ol);
-    links.forEach((stories) => {
-    let liLabel = document.createElement('li');
-    let aLiUrl = document.createElement('a');
-    aLiUrl.setAttribute("href",stories.url);
-    aLiUrl.textContent = stories.url;
-    
-    liLabel.textContent = stories.label;
-    liLabel.appendChild(aLiUrl);
-    
-    ol.appendChild(liLabel);
+        })
+    div.appendChild(ol);
+}
 
-  })
-  div.appendChild(ol);
 
 
 
