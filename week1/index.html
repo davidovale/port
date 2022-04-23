@@ -10,19 +10,45 @@
 
         </header>
         <main>
-            <div class="content-text">
-                <h1>Story Editor</h1>
-                <label for="name_input">Story Name: </label><input id=name_input>
-                <label for="story_editor">Story:</label>
-                <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
-            
-                <div class="section-buttons">
-                    <button onclick="loadStory()">Find and Edit It</button>
-                    <button onclick="saveStory()">Save It</button>
-                    <button onclick="displayStory()">Display It</button>
-                    <button onclick="removeStory()">Remove It</button>
+            <h1>Story Editor</h1>
+            <div class="content-main">
+                <div class="content-text">
+                    <label for="name_input">Story Name: </label><input id=name_input>
+                    <label for="story_editor">Story:</label>
+                    <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+                
+                    <div class="section-buttons">
+                        <button onclick="loadStory()">Find and Edit It</button>
+                        <button onclick="saveStory()">Save It</button>
+                        <button onclick="displayStory()">Display It</button>
+                        <button onclick="removeStory()">Remove It</button>
+                    </div>
+                    <div id="story_display"></div>
                 </div>
-                <div id="story_display"></div>
+                <div class="content-learned">
+                    <h2>What I learned</h2>
+                    
+                    <p>I learned better how to use localStorage. It's something very interesting and useful. 
+                    Information saved in the user's browser via localStorage persists even after the browser 
+                    is closed. They are only cleared if the user clears the browser cache. In any browser, 
+                    localStorage is limited to storing only 5Mb of data. Much more than the 4Kb of cookies; 
+                    Generally used to write public data that does not need to be so permanent as to save 
+                    it in the database. It is also worth remembering that it is not good to save sensitive 
+                    data for security reasons. You can only use strings in localStorage, so if it's not a 
+                    string yet, we can use JSON.stringify() to save the data.</p>
+
+                    <p>If it is necessary to save some user data, but even more temporarily, we can use 
+                    sessionStorage. For example, if the user is filling out a form, and he needs to do 
+                    something else, but it wouldn't be nice for him to lose everything he's already done, 
+                    so we use sessionStorage that keeps the data for the duration of the session, that is, 
+                    the data only will be deleted when the user closes the browser. localStorage It is 
+                    widely used, for example, to store interface behaviors.</p>
+
+                    <p>*Just a curiosity, you can see what data is saved in localStorage and sessionStorage, 
+                    just press ctrl + shift + i or right click and "Inspect" (google chrome), then go to 
+                    Application >> Storage and on the left side , you choose the option, localStorage / 
+                    sessionStorage</p>
+                </div>
             </div>
         </main>
         <footer>
