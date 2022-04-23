@@ -10,7 +10,6 @@ main h1{
 .content-main{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid blue;
 }
 
 footer h2{
