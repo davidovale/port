@@ -65,3 +65,18 @@ function removeStory(){
 }
 
 /* END WEEK 1 INDEX.HTML */
+
+
+/* WEEK 2 INDEX.HTML */
+
+let ch_list = new Map();
+
+ch_list.set('ch2', 'Programming Basics').set('ch3', 'Arrays, Logic, and Loops').set('ch4', 'Functions');
+
+for (const [key, value] of ch_list.entries()){
+    let link = document.createElement('a');
+    link.setAttribute('href', `${key}/index.html`);
+    link.textContent = value;
+    document.getElementById("content-week2").appendChild(link);
+}
+/* END WEEK 2 INDEX.HTML */

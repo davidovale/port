@@ -12,13 +12,30 @@ main{
     grid-template-columns: 1fr 1fr;
 }
 
+.content-week2{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.content-week2{
+    font-size: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
 footer h2{
     background-color: rgb(244, 243, 216);
     padding: 10px;
 }
 
+main h1{
+    padding: 0px 20px;
+}
+
 footer {
     margin: 50px;
+    text-align: center;
 }
 .section-buttons button {
     margin: 10px;
