@@ -6,6 +6,10 @@ const links = [
     {
         label: "Week 2 notes",
         url: "week2/index.html"
+    },
+    {
+        label: "Week 3 notes",
+        url: "week3/index.html"
     }
 ]
 
@@ -68,15 +72,32 @@ function removeStory(){
 
 
 /* WEEK 2 INDEX.HTML */
+function functionWeek2(){
 
-let ch_list = new Map();
+    let ch_list = new Map();
 
-ch_list.set('ch2', 'Programming Basics').set('ch3', 'Arrays, Logic, and Loops').set('ch4', 'Functions');
+    ch_list.set('ch2', 'Programming Basics').set('ch3', 'Arrays, Logic, and Loops').set('ch4', 'Functions');
 
-for (const [key, value] of ch_list.entries()){
-    let link = document.createElement('a');
-    link.setAttribute('href', `${key}/index.html`);
-    link.textContent = value;
-    document.getElementById("content-week2").appendChild(link);
+    for (const [key, value] of ch_list.entries()){
+        let link = document.createElement('a');
+        link.setAttribute('href', `${key}/index.html`);
+        link.textContent = value;
+        document.getElementById("content-week2").appendChild(link);
+    }
 }
 /* END WEEK 2 INDEX.HTML */
+
+
+/* WEEK 3 INDEX.HTML */
+
+let ch_list_3 = new Map();
+
+ch_list_3.set('article', 'Object Methods: this / This in JavaScript').set('ch5', 'Objects').set('ch6', 'Document Object Model').set('ch7', 'Events');
+
+for (const [key, value] of ch_list_3.entries()){
+    let link = document.createElement('a');
+    link.setAttribute('href', `${key}/index.html`);
+    link.textContent = `${key} - ${value}`;
+    document.getElementById("content-week3").appendChild(link);
+}
+/* END WEEK 3 INDEX.HTML */
