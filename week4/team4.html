@@ -130,13 +130,13 @@
 
         function reset(){
             for(i = 0; i < 3; i++){
-                for(j = 0; j < 3; j++){0
+                for(j = 0; j < 3; j++){
                     let grid = document.getElementById(`td${i}-${j}`)
-                    tCol.setAttribute('class', `td${i}-${j}`);
-                    tCol.setAttribute('id', `td${i}-${j}`);
-                    tRow.appendChild(tCol);
+                    grid.textContent = "";
+                    option = "";
+                    count = 0;
+                    document.getElementById('lbl-winner').innerHTML = "";
                 }
-                table.appendChild(tRow);
             }
         }
 
