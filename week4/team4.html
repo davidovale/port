@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Team Assignment</title>
+    <link type="text/css" rel="stylesheet" href="teamcss.css">
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+            <div class="titles">
+                <h1>Tic-Tac-Toe</h1>
+                <h2>Player 1 = X</h2>
+                <h2>Player 2 = O</h2>
+                <input type="button" value="Reset" id="btn-reset">
+            </div>
+            <div class="div-winner">
+                <label id="lbl-winner"></label>
+            </div>
+            <div id='table-tic'>
+
+            </div>        
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        let tableTic = document.getElementById('table-tic');
+        let btnReset = document.getElementById('btn-reset');
+        let option = "";
+        count = 0;
+        createTable(3,3);
+
+        function createTable(col, row){
+            let table = document.createElement('table');
+            table.setAttribute('id', 'main-table'); 
+            for(i = 0; i < col; i++){
+                let tRow = document.createElement('tr');
+                for(j = 0; j < row; j++){
+                    let tCol = document.createElement('td');
+                    tCol.setAttribute('class', `td${i}-${j}`);
+                    tCol.setAttribute('id', `td${i}-${j}`);
+                    tRow.appendChild(tCol);
+                }
+                table.appendChild(tRow);
+            }
+            tableTic.appendChild(table);
+        }
+
+        function match(e){
+            console.log(e.target);
+            let match = markMatch();
+            if(document.getElementById('lbl-winner').innerHTML == ""){
+                if (e.target.textContent == ""){
+                    e.target.innerHTML = match;
+                    count += 1;
+                    checkMatch();
+                }
+            }
+
+            
+            
+        }
+
+        function markMatch(){
+            if(option == ""){
+                option = "X";
+                return option;
+            }else if(option == "O"){
+                option = "X";
+                return option;
+            }else if(option == "X"){
+                option = "O";
+                return option;
+            }
+        }
+
+        const winningConditions = [
+            ['td0-0', 'td0-1', 'td0-2'],
+            ['td1-0', 'td1-1', 'td1-2'],
+            ['td2-0', 'td2-1', 'td2-2'],
+            ['td0-0', 'td1-0', 'td2-0'],
+            ['td0-1', 'td1-1', 'td2-1'],
+            ['td0-2', 'td1-2', 'td2-2'],
+            ['td0-0', 'td1-1', 'td2-2'],
+            ['td2-0', 'td1-1', 'td0-2']];
+
+        function checkMatch(){
+            let roundWon = false;
+            let player = "";
+            for (let i = 0; i <= 7; i++) {
+                const winCondition = winningConditions[i];
+                let a = document.getElementById(winCondition[0]).textContent;
+                let b = document.getElementById(winCondition[1]).textContent;
+                let c = document.getElementById(winCondition[2]).textContent;
+                if (a === '' || b === '' || c === '') {
+                    continue;
+                }
+                if (a === b && b === c) {
+                    roundWon = true;
+                    player = a;
+                    break
+                }
+            }
+
+            if (count == 9){
+                tie();
+            }else{
+                if(roundWon == true){
+                    winner(player);
+                }
+            }
+        }
+
+        function tie(){
+            document.getElementById('lbl-winner').innerHTML = "It was a tie!!!";
+        }
+
+        function winner(player){
+            if (player == "X"){
+                document.getElementById('lbl-winner').innerHTML = "Player 1 win!!!";
+            }else if (player == "O"){
+                document.getElementById('lbl-winner').innerHTML = "Player 2 win!!!";
+            }
+        }
+
+        tableTic.addEventListener('click',match);
+        btnReset.addEventListener('click', reset);
+
+        function reset(){
+            for(i = 0; i < 3; i++){
+                for(j = 0; j < 3; j++){0
+                    let grid = document.getElementById(`td${i}-${j}`)
+                    tCol.setAttribute('class', `td${i}-${j}`);
+                    tCol.setAttribute('id', `td${i}-${j}`);
+                    tRow.appendChild(tCol);
+                }
+                table.appendChild(tRow);
+            }
+        }
+
+    </script>
+</body>
+</html>

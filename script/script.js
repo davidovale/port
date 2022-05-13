@@ -10,6 +10,10 @@ const links = [
     {
         label: "Week 3 notes",
         url: "week3/index.html"
+    },
+    {
+        label: "Week 4 notes",
+        url: "week4/index.html"
     }
 ]
 
@@ -89,15 +93,31 @@ function functionWeek2(){
 
 
 /* WEEK 3 INDEX.HTML */
+function functionWeek3(){
+    let ch_list_3 = new Map();
 
-let ch_list_3 = new Map();
+    ch_list_3.set('article', 'Object Methods: this / This in JavaScript').set('ch5', 'Objects').set('ch6', 'Document Object Model').set('ch7', 'Events');
 
-ch_list_3.set('article', 'Object Methods: this / This in JavaScript').set('ch5', 'Objects').set('ch6', 'Document Object Model').set('ch7', 'Events');
-
-for (const [key, value] of ch_list_3.entries()){
-    let link = document.createElement('a');
-    link.setAttribute('href', `${key}/index.html`);
-    link.textContent = `${key} - ${value}`;
-    document.getElementById("content-week3").appendChild(link);
+    for (const [key, value] of ch_list_3.entries()){
+        let link = document.createElement('a');
+        link.setAttribute('href', `${key}/index.html`);
+        link.textContent = `${key} - ${value}`;
+        document.getElementById("content-week3").appendChild(link);
+    }
 }
 /* END WEEK 3 INDEX.HTML */
+
+/* WEEK 4 INDEX.HTML */
+function functionWeek4(){
+    let ch_list_4 = new Map();
+
+    ch_list_4.set('ch8', 'Forms').set('ch12', 'Object-Oriented Programming in JavaScript').set('ch15', 'Modern JavaScript Development');
+
+    for (const [key, value] of ch_list_4.entries()){
+        let link = document.createElement('a');
+        link.setAttribute('href', `${key}/index.html`);
+        link.textContent = `${key} - ${value}`;
+        document.getElementById("content-week4").appendChild(link);
+    }
+}
+/* END WEEK 4 INDEX.HTML */
