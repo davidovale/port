@@ -1,0 +1,13 @@
+main{
+    margin: 50px;
+}
+#txt_item{
+    border-radius: 10px;
+    height: 25px;
+    padding: 0px 15px;
+    margin: 0px 20px;
+}
+
+#btn_add{
+    font-size: 20px;
+}
