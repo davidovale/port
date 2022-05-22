@@ -16,7 +16,7 @@ const links = [
         url: "week4/index.html"
     },
     {
-        label: "Week 5 Todo Challenge",
+        label: "Week 5 notes",
         url: "week5/index.html"
     }
 ]
@@ -125,3 +125,18 @@ function functionWeek4(){
     }
 }
 /* END WEEK 4 INDEX.HTML */
+
+/* WEEK 5 INDEX.HTML */
+function functionWeek5(){
+    let ch_list_5 = new Map();
+
+    ch_list_5.set('ch10', 'Testint and Debugging').set('Challenge', 'Todo List');
+
+    for (const [key, value] of ch_list_5.entries()){
+        let link = document.createElement('a');
+        link.setAttribute('href', `${key}/index.html`);
+        link.textContent = `${key} - ${value}`;
+        document.getElementById("content-week5").appendChild(link);
+    }
+}
+/* END WEEK 5 INDEX.HTML */
