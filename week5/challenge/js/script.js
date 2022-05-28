@@ -31,6 +31,7 @@ function list(){
             completed.setAttribute('id',`btn${txt[0]}`);
             completed.setAttribute('value', 'X');
             completed.setAttribute('class', 'btnCompleted');
+            completed.setAttribute('onclick', `removeItem('${el}')`);
             completed.innerHTML = 'X';
 
             myList.appendChild(chbox);
@@ -48,18 +49,15 @@ function completed(check){
             txt[2] = 'true';
         }
         
-    });
-    //localStorage.setItem('todo', JSON.stringify(array));
-    //document.getElementById(check).checked = true;
+    })
+    
 }
 
+function removeItem(el){
+    todo = JSON.parse(localStorage.getItem("todo"));
+    const position = todo.indexOf(el);
+    todo.splice(position, 1);
+    localStorage.setItem('todo', JSON.stringify(todo));
+    list();
+}
 
-
-
-/**
- * 
- * let check = document.createElement('checkbox');
-    
-    check.setAttribute('id', getTime);
-    myList.appendChild(check);
- */
