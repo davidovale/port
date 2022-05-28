@@ -14,10 +14,27 @@ main{
 
 #myList{
     margin: 100px 0px;
-    display: grid;
-    grid-template-columns: 30px 300px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 500px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#myList div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+#myList div label{
+    width: 100%;
     text-align: center;
-    line-height: 30px;
+    font-size: 20px;
 }
 
 .chbox{
@@ -25,5 +42,14 @@ main{
 }
 
 .btnCompleted{
-    transform: scale(0.8);
+    transform: scale(1);
+}
+
+.enabled{
+    background-color: rgb(224, 243, 224);
+}
+
+.disabled{
+    background-color: rgb(224, 223, 223);
+    text-decoration:line-through;
 }
