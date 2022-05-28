@@ -130,7 +130,7 @@ function functionWeek4(){
 function functionWeek5(){
     let ch_list_5 = new Map();
 
-    ch_list_5.set('ch10', 'Testint and Debugging').set('Challenge', 'Todo List');
+    ch_list_5.set('ch10', 'Testing and Debugging').set('Challenge', 'Todo List');
 
     for (const [key, value] of ch_list_5.entries()){
         let link = document.createElement('a');

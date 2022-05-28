@@ -11,3 +11,19 @@ main{
 #btn_add{
     font-size: 20px;
 }
+
+#myList{
+    margin: 100px 0px;
+    display: grid;
+    grid-template-columns: 30px 300px 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.chbox{
+    transform: scale(2);
+}
+
+.btnCompleted{
+    transform: scale(0.8);
+}
