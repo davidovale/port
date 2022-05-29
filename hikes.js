@@ -56,7 +56,7 @@ const hikeList = [
     //show a list of hikes in the parentElement
     showHikeList() {
       //const hikeListElement = document.getElementById("hikes");
-      this.parentElement.innerHTML = ''
+      this.parentElement.innerHTML = '';
       //hikeListElement.innerHTML = "";
       renderHikeList(this.parentElement, this.getAllHikes());
     }

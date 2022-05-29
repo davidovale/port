@@ -4,7 +4,7 @@
         <title>Week 5 - Todo List</title>
         <link type="text/css" rel="stylesheet" href="./css/style.css">
     </head>
-    <body onload="list();">
+    <body">
         <header>
             
         </header>
@@ -17,10 +17,16 @@
             <div id="myList">
 
             </div>
+            <div>
+                <input type="radio" id="rd_active" name="rd_filter">
+                <label for="rd_active">Show Actives</label>
+                <input type="radio" id="rd_all" name="rd_filter" checked>
+                <label for="rd_all">Show All</label>
+            </div>
         </main>
         <footer>
 
         </footer>
-        <script src="./js/script.js"></script>
+        <script type="module" src="./js/todos.js"></script>
     </body>
 </html>
