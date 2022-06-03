@@ -18,6 +18,10 @@ const links = [
     {
         label: "Week 5 notes",
         url: "week5/index.html"
+    },
+    {
+        label: "Week 7 notes",
+        url: "week7/index.html"
     }
 ]
 
@@ -140,3 +144,18 @@ function functionWeek5(){
     }
 }
 /* END WEEK 5 INDEX.HTML */
+
+/* WEEK 7 INDEX.HTML */
+function functionWeek7(){
+    let ch_list_7 = new Map();
+
+    ch_list_7.set('ch11', 'Further Functions').set('ch13', 'Ajax');
+
+    for (const [key, value] of ch_list_7.entries()){
+        let link = document.createElement('a');
+        link.setAttribute('href', `${key}/index.html`);
+        link.textContent = `${key} - ${value}`;
+        document.getElementById("content-week7").appendChild(link);
+    }
+}
+/* END WEEK 7 INDEX.HTML */
