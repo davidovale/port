@@ -20,8 +20,16 @@ const links = [
         url: "week5/index.html"
     },
     {
+        label: "Week 6 - No Tasks",
+        url: ""
+    },
+    {
         label: "Week 7 notes",
         url: "week7/index.html"
+    },
+    {
+        label: "Week 8 notes",
+        url: "week8/index.html"
     }
 ]
 
@@ -156,6 +164,21 @@ function functionWeek7(){
         link.setAttribute('href', `${key}/index.html`);
         link.textContent = `${key} - ${value}`;
         document.getElementById("content-week7").appendChild(link);
+    }
+}
+/* END WEEK 7 INDEX.HTML */
+
+/* WEEK 8 INDEX.HTML */
+function functionWeek8(){
+    let ch_list_8 = new Map();
+
+    ch_list_8.set('ch8', 'Transforms and Transitions').set('ch12', 'Canvas, SVG, Drag and Drop');
+
+    for (const [key, value] of ch_list_8.entries()){
+        let link = document.createElement('a');
+        link.setAttribute('href', `${key}/index.html`);
+        link.textContent = `${key} - ${value}`;
+        document.getElementById("content-week8").appendChild(link);
     }
 }
 /* END WEEK 7 INDEX.HTML */

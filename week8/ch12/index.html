@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chapter 12</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body onload="draw()">
+    <header>
+
+    </header>
+    <main>
+      <a href="../index.html">Come Back</a>
+      <div>
+        <h2>Canvas</h2>
+        <canvas id="canvas" width="150" height="150"></canvas>
+      </div>
+      <div>
+        <h2>SVG</h2>
+        <svg>
+          <rect id="quadrado" width="50" height="50"></rect>
+        </svg>
+        
+        <button id="btn">Increase!</button>
+        <button id="btn-d">Decrease!</button>
+        <button id="btn-red">Red!</button>
+      </div>
+      <div>
+        <h2>Drag and Drop</h2>
+        <p>Drag the W3Schools image into the rectangle:</p>
+
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <br>
+        <img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
+      </div>
+      
+    </main>
+    <footer>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

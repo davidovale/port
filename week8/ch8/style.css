@@ -1,0 +1,234 @@
+
+
+/* TRANSFORMS */
+
+ul {
+  position: relative; top: 100px; left: 100px;
+  float: left; width: 400px;  
+}
+
+li {position: absolute;
+  top: 150px;
+  left: 150px;
+  height: 200px;
+  width: 100px;
+  border: 3px solid black;
+  border-radius: 50%;
+  list-style-type: none;
+  transform-origin: 10% 10%;
+}
+ul:first-of-type li {
+  transform-origin: center;
+}
+ul:last-of-type li {
+  transform-origin: top center;
+}
+li:nth-of-type(20) {
+  -webkit-transform: rotate(15deg);
+  opacity: 0.95;
+}
+li:nth-of-type(2) {
+  -webkit-transform: rotate(30deg);
+  opacity: 0.9;
+}
+li:nth-of-type(3) {
+  -webkit-transform: rotate(45deg);
+  opacity: 0.85;
+}
+
+li:nth-of-type(4) {
+  -webkit-transform: rotate(60deg);
+  opacity: 0.8;
+}
+
+li:nth-of-type(5) {
+  -webkit-transform: rotate(75deg);
+  opacity: 0.75;
+}
+
+li:nth-of-type(6) {
+  -webkit-transform: rotate(90deg);
+  opacity: 0.7;
+}
+
+li:nth-of-type(7) {
+  -webkit-transform: rotate(105deg);
+  opacity: 0.65;
+}
+
+li:nth-of-type(8) {
+  -webkit-transform: rotate(120deg);
+  opacity: 0.6;
+}
+li:nth-of-type(9) {
+  -webkit-transform: rotate(135deg);
+  opacity: 0.55;
+}
+li:nth-of-type(10) {
+  -webkit-transform: rotate(150deg);
+  opacity: 0.5;
+}
+li:nth-of-type(11) {
+  -webkit-transform: rotate(165deg);
+  opacity: 0.45;
+}
+li:nth-of-type(12) {
+  -webkit-transform: rotate(180deg);
+  opacity: 0.4;
+}
+li:nth-of-type(13) {
+  -webkit-transform: rotate(195deg);
+  opacity: 0.35;
+}
+li:nth-of-type(14) {
+  -webkit-transform: rotate(210deg);
+  opacity: 0.30;
+}
+li:nth-of-type(15) {
+  -webkit-transform: rotate(225deg);
+  opacity: 0.25;
+}
+
+li:nth-of-type(16) {
+  -webkit-transform: rotate(240deg);
+  opacity: 0.2;
+}
+
+li:nth-of-type(17) {
+  -webkit-transform: rotate(255deg);
+  opacity: 0.15;
+}
+
+li:nth-of-type(18) {
+  -webkit-transform: rotate(270deg);
+  opacity: 0.1;
+}
+
+li:nth-of-type(19) {
+  -webkit-transform: rotate(295deg);
+  opacity: 0.05;
+}
+li:first-of-type {
+  border-color: red;
+}
+
+/* TRANSITIONS */
+
+article {
+  height: 10px;
+  background: #58ADE3;
+  background: linear-gradient(to right, black 10%, white 10%);
+  background-size: 50px 10px;
+  margin: 20px 0;
+  position: relative; }
+
+article:after {
+  content: '';
+  height: 10px;
+  width: 5px;
+  position: absolute;
+  left: 498px;
+  background-color: #58ADE3; }
+
+.transitions div:nth-of-type(1) {
+  border-color: #58ADE3; }
+
+.transitions div:nth-of-type(1) {
+  animation-iteration-count: 0.0000001; }
+
+  .transitions div:nth-of-type(2) {
+  animation-iteration-count: 0.05; }
+
+  .transitions div:nth-of-type(3) {
+  animation-iteration-count: 0.1; }
+
+  .transitions div:nth-of-type(4) {
+  animation-iteration-count: 0.15; }
+
+  .transitions div:nth-of-type(5) {
+  animation-iteration-count: 0.2; }
+
+  .transitions div:nth-of-type(6) {
+  animation-iteration-count: 0.25; }
+
+  .transitions div:nth-of-type(7) {
+  animation-iteration-count: 0.3; }
+
+  .transitions div:nth-of-type(8) {
+  animation-iteration-count: 0.35; }
+
+  .transitions div:nth-of-type(9) {
+  animation-iteration-count: 0.4; }
+
+  .transitions div:nth-of-type(10) {
+  animation-iteration-count: 0.45; }
+
+  .transitions div:nth-of-type(11) {
+  animation-iteration-count: 0.50; }
+
+  .transitions div:nth-of-type(12) {
+  animation-iteration-count: 0.55; }
+
+  .transitions div:nth-of-type(13) {
+  animation-iteration-count: 0.6; }
+
+  .transitions div:nth-of-type(14) {
+  animation-iteration-count: 0.65; }
+
+  .transitions div:nth-of-type(15) {
+  animation-iteration-count: 0.7; }
+
+  .transitions div:nth-of-type(16) {
+  animation-iteration-count: 0.75; }
+
+  .transitions div:nth-of-type(17) {
+  animation-iteration-count: 0.8; }
+
+  .transitions div:nth-of-type(18) {
+  animation-iteration-count: 0.85; }
+
+  .transitions div:nth-of-type(19) {
+  animation-iteration-count: 0.9; }
+
+  .transitions div:nth-of-type(20) {
+  animation-iteration-count: 0.95; }
+
+  .transitions div:nth-of-type(21) {
+  animation-iteration-count: 1;
+  border-color: #58ADE3; }
+
+  .transitions div:nth-of-type(n+22) {
+  display: none; }
+
+article:after, article:before {
+  height: 300px !important;
+  opacity: 0.25;
+  content: ""; }
+
+article:before {
+  position: absolute;
+  left: 100px;
+  width: 5px;
+  background-color: black; }
+
+.transitions div {
+  border: 5px black solid;
+  color: white;
+  font-family: sans-serif;
+  box-sizing: border-box;
+    margin-bottom: 2px;
+}
+
+.transitions{
+  margin: 600px 0px;
+}
+
+.transitions div{
+  animation: width 5s cubic-bezier(0,4,1,-4) both;
+}
+
+@keyframes width {
+  0% {height: 5px; width: 500px;}
+  100% {height: 5px; width: 100px;}
+}
+
