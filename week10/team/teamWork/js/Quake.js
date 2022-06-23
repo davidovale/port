@@ -14,7 +14,7 @@ export default class Quake {
       this.baseUrl +
         `&starttime=2022-06-23&endtime=2022-10-05&latitude=${
           position.lat
-        }&longitude=${position.lon}&maxradiuskm=10000`
+        }&longitude=${position.lon}&maxradiuskm=${radius}`
     );
     return this._quakes;
   }
