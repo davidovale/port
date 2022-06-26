@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Roboto+Slab:wght@300&display=swap');
+
+:root{
+    --heading-font: 'Lato', sans-serif;
+    --paragraph-font: 'Roboto Slab', serif;
+}
+
+
+h1{
+    font-family: var(--heading-font);
+}
+
+h2, h3{
+    font-family: var(--paragraph-font);
+}
+
+section{
+    background-color: #F0FFF0;
+    margin: 5px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+img{
+    max-width: 70%;
+    box-shadow: 20px 10px 20px rgb(98, 140, 166);
+	border-collapse: collapse;
+    margin: 10px;
+}
+
+img:hover {
+    box-shadow: 0 0 50px #333;
+}
+
+footer, header{
+    text-align: center;
+}
+
+h1, h2, h3, h4{
+    color: #000099;
+}
+
+.death{
+    display: none;
+}
+
+
+/* ID Selectors */
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+
+/* Media Queries */
+@media only screen and (max-width: 64rem) {
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    img{
+        max-width: 60%;
+    }
+
+    h1{
+        font-size: 1.5em;
+    }
+
+    h2{
+        font-size: 1.2em;
+    }
+
+    h3{
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 32rem){
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    img{
+        max-width: 50%;
+    }
+
+    h1{
+        font-size: 1.5em;
+    }
+
+    h2{
+        font-size: 1.2em;
+    }
+
+    h3{
+        font-size: 1em;
+    }
+
+}

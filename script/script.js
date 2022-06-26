@@ -34,6 +34,10 @@ const links = [
     {
         label: "Week 9 notes",
         url: "week9/index.html"
+    },
+    {
+        label: "Week 10 notes",
+        url: "week10/index.html"
     }
 ]
 
@@ -201,3 +205,18 @@ function functionWeek9(){
     }
 }
 /* END WEEK 9 INDEX.HTML */
+
+/* WEEK 10 INDEX.HTML */
+function functionWeek10(){
+    let ch_list_10 = new Map();
+
+    ch_list_10.set('mdn1', 'Validating Forms').set('mdn2', 'Using Fetch');
+
+    for (const [key, value] of ch_list_10.entries()){
+        let link = document.createElement('a');
+        link.setAttribute('href', `${key}/index.html`);
+        link.textContent = `${key} - ${value}`;
+        document.getElementById("content-week10").appendChild(link);
+    }
+}
+/* END WEEK 10 INDEX.HTML */

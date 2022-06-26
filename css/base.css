@@ -1,5 +1,5 @@
 main{
-    height: 500px;
+    height: 600px;
 }
 
 .firstH1{
@@ -12,7 +12,7 @@ main{
     grid-template-columns: 1fr 1fr;
 }
 
-.content-week2, .content-week3, .content-week4, .content-week5, .content-week7, .content-week8, .content-week9{
+.content-week2, .content-week3, .content-week4, .content-week5, .content-week7, .content-week8, .content-week9, .content-week10{
     display: flex;
     flex-direction: column;
     gap: 50px;
