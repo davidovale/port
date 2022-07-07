@@ -210,7 +210,7 @@ function functionWeek9(){
 function functionWeek10(){
     let ch_list_10 = new Map();
 
-    ch_list_10.set('mdn1', 'Validating Forms').set('mdn2', 'Using Fetch');
+    ch_list_10.set('mdn1', 'Validating Forms').set('mdn2', 'Using Fetch').set('team/teamWork', 'Team Assignment');
 
     for (const [key, value] of ch_list_10.entries()){
         let link = document.createElement('a');

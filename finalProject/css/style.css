@@ -1,0 +1,39 @@
+/* First Login Page*/
+
+#content-firstLogin{
+    border: 1px solid;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#lbl_name{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#txt_name{
+    width: 200px;
+    border-radius: 10px;
+    height: 25px;
+    padding: 0px 15px;
+}
+#content-firstLogin img{
+    width: 30%;
+}
+
+.btn_submit{
+    margin: 20px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.btn_submit:hover{
+    background-color: rgb(208, 243, 230);
+}
+
+
+/* End First Login Page*/
