@@ -1,63 +1,31 @@
-/* First Login Page*/
-
-#content-firstLogin{
-    border: 1px solid;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+body {
+	background: #EFEFBB;
+	background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
+	color: white;
+	margin: 0;
+	font-family: rubik;
 }
 
-#lbl_name{
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px;
+.container {
+	padding: 40px;
+	margin: 0 auto;
 }
 
-#txt_name{
-    width: 200px;
-    border-radius: 10px;
-    height: 25px;
-    padding: 0px 15px;
-}
-#content-firstLogin img{
-    width: 30%;
+h1 {
+	text-align: center;
+	font-size: 54px;
 }
 
-.btn_submit{
-    margin: 20px;
-    font-size: 15px;
-    border-radius: 10px;
-}
-
-.btn_submit:hover{
-    background-color: rgb(208, 243, 230);
-}
-
-
-/* End First Login Page*/
-
-
-
-
-/* Main Login Page*/
-
-#pokedex{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#welcome_mainPage{
-    text-align: center;
+.pokedex {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-gap: 20px;
+	padding-inline-start: 0;
 }
 
 .card {
 	list-style: none;
 	padding: 40px;
-    margin: 20px;
 	color: #222;
 	text-align: center;
 	border-radius: 20px;
@@ -180,6 +148,3 @@
 			transform: translateY(0);
 	}
 }
-
-
-/* End Main Login Page*/
