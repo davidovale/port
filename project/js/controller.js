@@ -1,50 +1,70 @@
-
-import MainLoginJS from "./mainLoginJS.js";
 import Pokedex from "../pokedex/app.js";
 import Items from "./utilities.js";
+import MainPokedexPage from "./mainPokedex.js";
 
 
 export default class Controller{
     constructor(name){
         this.name = null;
+        this.key = 'pokemonGameSessionVersion';
         this.path = null;
-        this.takefirstPokemon = new MainLoginJS();
+  //      this.takefirstPokemon = new MainLoginJS();
         this.mainPokemon = new Pokedex();
         this.item = new Items();
-        this.item.saveItem("playerNamePokemon", "");
+        this.pokedexPage = new MainPokedexPage();
+        //this.item.saveItem("playerNamePokemon", "");
+        this.account = "";
+        this.c;
     }
 
-    async init(controller){
-        
+    async init(controller) {
+
         this.name = takeName();
-        
-       let value = checkPlayer(this.name);
-       this.item.saveItem(this.name, value);
-        
         if (this.name == null){
+            //let value = checkPlayer(this.name);
+            //this.item.saveItem(this.name, value);
+            this.item.saveItem('playerNamePokemon', '');
+            this.c = 1;
+        }
+
+        const pName = this.item.getItem('playerNamePokemon');
+        if (this.name == null && (pName =='' || pName == null || pName == 'null')) {
             this.path = "firstLogin.html";
             insertViewAsync(getViewAsync(this.path), controller);
-        }else{
-            //let btn_first_pokemon = takeName("");
-            this.path = "mainLogin.html";
+        } else if (pName == null || pName == 'null' || pName == ''){
             this.item.saveItem("playerNamePokemon", this.name);
-
-
-            //localStorage.setItem("playerNamePokemon",this.name);
-            //insertViewAsync(getViewAsync(this.path), controller);
-            window.location.href = "../project/mainLogin.html";
             
-            let chPok = this.takefirstPokemon.checkFirstPokemon();
-            if (chPok == false){                
-                this.mainPokemon.callPokemon(this.name);
-            }else{
-                //this.path = "./views/vw_my_pokemons.html";
-                //insertViewAsync(getViewAsync(this.path), controller);
-            }
-            
+            this.item.saveItem(this.key,checkPlayer(this.name));
+            document.getElementById("span_player").innerHTML = this.name;
+            this.account = JSON.parse(this.item.getItem(this.name));
+            const firstP = JSON.parse(sessionStorage.getItem('pokemonChosen') || '[]');
+           // if(checkFirstPokemon(this.account)){
 
-        }        
+           // }else{
+                this.mainPokemon.callPokemon();
+            //}                       
+            //window.location.href = "../project/mainLogin.html";
+            //console.log(this.account[0].name);
+        } else {
+            this.path = 'mainPokedexPage.html';
+            this.startGame(this.path, controller);
+            
+        }
     }
+
+    startGame(path, controller){
+        addFirstPokemonInfo(this.key, this.item);
+        const mainPokemon = sessionStorage.getItem('pokemonChosen');
+        let accumulator = `
+        <h1>${this.name}</h1>
+        <img class='card-image' alt='charmander' src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${mainPokemon}.png'>
+        `;
+        getViewAsync(path)
+        testView(accumulator, controller);
+        
+        
+    }
+    
 }
 
 async function getViewAsync(viewPath) {
@@ -56,6 +76,13 @@ async function getViewAsync(viewPath) {
     } catch (err) {
       console.log('Something went wrong', err);
     }
+  }
+
+  async function testView(viewPromise, controller) {
+    const contentElement = document.getElementById('main-game');
+    //debugger;
+    contentElement.innerHTML = await viewPromise;
+    //controller.init();
   }
 
   async function insertViewAsync(viewPromise, controller) {
@@ -77,7 +104,12 @@ function takeName(e=""){
         return nickName;
 
     }else{
-        return null;
+        if(sessionStorage.getItem('playerNamePokemon') != ''){
+            return sessionStorage.getItem('playerNamePokemon')
+        }else{
+            return null;
+        }
+        
     }
 }
 
@@ -88,10 +120,26 @@ function checkPlayer(nameP){
         rollPlayer.push({
             name: nameP,
             firstPokemon: "",
-            pokemons:"",
-            levels:""
+            pokemons: [],
+            levels:[]
         })
-       return JSON.stringify(rollPlayer);
+       
+ //   }else{
+   //     rollPlayer = JSON.parse(localStorage.getItem('playerNamePokemon'));
     }
+   // console.log(JSON.stringify(rollPlayer));
+    return JSON.stringify(rollPlayer);
+}
 
+function addFirstPokemonInfo(key, item){
+    let mainPokedex = JSON.parse(item.getItem(key));
+    console.log(mainPokedex);
+    if(mainPokedex[0].firstPokemon == ''){
+        mainPokedex[0].firstPokemon = sessionStorage.getItem('pokemonChosen');
+        mainPokedex[0].pokemons.push(sessionStorage.getItem('pokemonChosen'));
+        mainPokedex[0].levels.push(1);
+        const aux = JSON.stringify(mainPokedex);
+        item.saveItem(key, aux);
+    }
+    
 }
