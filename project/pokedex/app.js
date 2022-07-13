@@ -2,31 +2,61 @@
 
 export default class Pokedex{
 
-    callPokemon(counter=0, loop=false){
+    callPokemon(counter = 0, loop = false) {
         const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`;
-        const pokemonPromises = []
-        
-        if(loop == false && counter == 0){
-            for (let i=1; i<=7; i= i+3){
-                pokemonPromises.push(fetch(getPokemonUrl(i)).then(response => response.json()));
+        const pokemonPromises = [];
+
+        const getPokemon = async (i) => {
+            if(counter != 0){
+                i = counter;
             }
-        }else if(loop == false){
-            for (let i=1; i<=7; i= i+3){
-                pokemonPromises.push(fetch(getPokemonUrl(counter)).then(response => response.json()));
+            const pokemon1 = axios.get(getPokemonUrl(i));
+
+            const pokemons = await Promise.all([
+                pokemon1
+            ])
+            console.log(pokemons);
+            return pokemons[0].data;
+        }
+
+        if (loop == false && counter == 0) {
+            for (let i = 1; i <= 7; i = i + 3) {
+                pokemonPromises.push(getPokemon(i));
+            Promise.all(pokemonPromises)
+            .then(pokemons => {
+                pokemonPromises.push(pokemons);
+                console.log(pokemons);
+                if(i == 7){
+                    setPage(pokemons);
+                }
+                
+            })
             }
-        }else{
-            for (let i=1; i<=150; i= i++){
+        } else if (loop == false) {
+            pokemonPromises.push(getPokemon());
+            Promise.all(pokemonPromises)
+            .then(pokemons => {
+                console.log(pokemons);
+                mainPokedex(pokemons);
+            })
+            
+        } else {
+            for (let i = 1; i <= 150; i = i++) {
                 pokemonPromises.push(fetch(getPokemonUrl(i)).then(response => response.json()));
             }
         }
-        
-    
-        Promise.all(pokemonPromises)
-        .then(pokemons => {
-            setPage(pokemons);
-        })
-        
+
     }
+}
+
+function mainPokedex(e){
+    e.forEach(element => {
+        const div = document.createElement("div");
+        const img = document.createElement("img");
+        const h2 = document.createElement("h2");
+        const p = document.createElement("p"); 
+        console.log(element.types)
+    })
 }
 
 function setPage(e){

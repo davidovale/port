@@ -2,7 +2,6 @@ import Pokedex from "../pokedex/app.js";
 import Items from "./utilities.js";
 import MainPokedexPage from "./mainPokedex.js";
 
-
 export default class Controller{
     constructor(name){
         this.name = null;
@@ -12,6 +11,7 @@ export default class Controller{
         this.mainPokemon = new Pokedex();
         this.item = new Items();
         this.pokedexPage = new MainPokedexPage();
+        this.pokedex = new Pokedex();
         //this.item.saveItem("playerNamePokemon", "");
         this.account = "";
         this.c;
@@ -55,12 +55,14 @@ export default class Controller{
     startGame(path, controller){
         addFirstPokemonInfo(this.key, this.item);
         const mainPokemon = sessionStorage.getItem('pokemonChosen');
+        const mainPokeInfo = this.pokedex.callPokemon(mainPokemon, false);
+        //console.log(mainPokeInfo);
         let accumulator = `
         <h1>${this.name}</h1>
         <img class='card-image' alt='charmander' src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${mainPokemon}.png'>
         `;
         getViewAsync(path)
-        testView(accumulator, controller);
+        mainView(accumulator, controller);
         
         
     }
@@ -78,7 +80,7 @@ async function getViewAsync(viewPath) {
     }
   }
 
-  async function testView(viewPromise, controller) {
+  async function mainView(viewPromise, controller) {
     const contentElement = document.getElementById('main-game');
     //debugger;
     contentElement.innerHTML = await viewPromise;
@@ -133,7 +135,7 @@ function checkPlayer(nameP){
 
 function addFirstPokemonInfo(key, item){
     let mainPokedex = JSON.parse(item.getItem(key));
-    console.log(mainPokedex);
+    //console.log(mainPokedex);
     if(mainPokedex[0].firstPokemon == ''){
         mainPokedex[0].firstPokemon = sessionStorage.getItem('pokemonChosen');
         mainPokedex[0].pokemons.push(sessionStorage.getItem('pokemonChosen'));
