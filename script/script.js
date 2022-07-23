@@ -38,6 +38,10 @@ const links = [
     {
         label: "Week 10 notes",
         url: "week10/index.html"
+    },
+    {
+        label: "Final Project",
+        url: "project/index.html"
     }
 ]
 
@@ -220,3 +224,18 @@ function functionWeek10(){
     }
 }
 /* END WEEK 10 INDEX.HTML */
+
+/* FINAL PROJECT */
+function functionWeek10(){
+    let ch_list_14 = new Map();
+
+    ch_list_14.set('project', 'Final Project');
+
+    for (const [key, value] of ch_list_14.entries()){
+        let link = document.createElement('a');
+        link.setAttribute('href', `./project/index.html`);
+        link.textContent = `${key} - ${value}`;
+        document.getElementById("content-week14").appendChild(link);
+    }
+}
+/* END FINAL PROJECTL */
