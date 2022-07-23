@@ -323,17 +323,21 @@ function checkEvolution(player, id, type){
                 if(el.pokemons == id){
                     el.pokemons[0] = e.next;
                     auxNext = e.next;
+                    
                 }
             });
             sessionStorage.setItem('pokemonGameSessionVersion', JSON.stringify(player));
             sessionStorage.setItem('pokemonChosen', e.next);
             const img = document.querySelector(`#img${JSON.parse(sessionStorage.getItem('idImgOriginal'))}`);
+
+            
             img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${e.next}.png`;
             //img.setAttribute('id',e.next);
             pokemonList.forEach(element => {
                 if(element.id == auxNext){
                     mainPokemon.id = auxNext;
                     mainPokemon.name = element.name;
+                    document.querySelector('#spanNameMainPokemon').textContent =element.name;
                     mainPokemon.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${auxNext}.png`;
                     const auxMain = mainPokemon;
                     sessionStorage.setItem('mainPokemon', JSON.stringify(auxMain));

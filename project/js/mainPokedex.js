@@ -96,6 +96,7 @@ export default class MainPokedexPage {
 
         h2.setAttribute('class', 'card-title');
         h2.innerHTML = `${element.name}`;
+        h2.setAttribute('id', 'spanNameMainPokemon');
 
         //p.innerHTML = element.types;
         playerInformation.forEach(el => {

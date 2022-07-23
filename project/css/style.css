@@ -11,6 +11,10 @@ span{
 	font-weight: bold;
 }
 
+#span_player{
+	font-size: 35px;
+}
+
 #sessionPlayer button{
 	padding: 10px;
 	border-radius: 10px;
