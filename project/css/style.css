@@ -1,5 +1,22 @@
 /* First Login Page*/
 
+body{
+	background-image: url('../images/bg_pokemon_1.jpg');
+	background-repeat: round;
+	
+}
+
+span{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#sessionPlayer button{
+	padding: 10px;
+	border-radius: 10px;
+	font-weight: bold;
+}
+
 #content-firstLogin{
     border: 1px solid;
     text-align: center;
@@ -48,6 +65,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.main-pokedex{
+	width: 300px;
 }
 
 #welcome_mainPage{
@@ -182,4 +203,31 @@
 }
 
 
+.main-pokedex a{
+	font-size: 20px;
+	margin: 0px 30px;
+	padding: 15px;
+	background-color: #bae208;
+	border-radius: 10px;
+}
+
 /* End Main Login Page*/
+
+/* Battle Page */
+
+.inputLikePokemon{
+	width: 70px;
+	border-radius: 10px;
+	margin: 5px;
+	text-align: center;
+}
+
+#barExp{
+	width: 70px;
+	border-radius: 10px;
+	margin: 5px;
+	text-align: center;
+
+}
+
+/* End Battle Page*/

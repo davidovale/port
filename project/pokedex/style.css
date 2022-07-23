@@ -6,6 +6,11 @@ body {
 	font-family: rubik;
 }
 
+body img{
+
+	opacity: 0.2;
+}
+
 .container {
 	padding: 40px;
 	margin: 0 auto;
